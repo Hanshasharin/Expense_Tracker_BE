@@ -7,7 +7,12 @@ const app = express();
 require('dotenv').config();
 
     var corsOptions = {
-  origin: process.env.CLIENT_URL,
+      
+  // origin: process.env.CLIENT_URL,
+  origin: [
+    "https://expense-tracker-fe-henna.vercel.app",
+    "http://localhost:5173"
+  ],
   credentials: true,               // allow cookies
   optionsSuccessStatus: 200
 };
