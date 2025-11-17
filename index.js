@@ -10,7 +10,7 @@ require('dotenv').config();
       
   // origin: process.env.CLIENT_URL,
   origin: [
-    "https://expense-tracker-fe-henna.vercel.app",
+    "https://expense-tracker-gcl5kqmd4-hansha-sharins-projects.vercel.app/",
     "http://localhost:5173"
   ],
   credentials: true,               // allow cookies
