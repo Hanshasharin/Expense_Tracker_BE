@@ -20,7 +20,7 @@ require('dotenv').config();
 };
 app.use(cors(corsOptions));
 
-app.options("*", cors(corsOptions));
+
 
     
 
