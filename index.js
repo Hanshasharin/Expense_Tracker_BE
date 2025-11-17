@@ -10,14 +10,17 @@ require('dotenv').config();
       
   // origin: process.env.CLIENT_URL,
   origin: [
-    "https://expense-tracker-gcl5kqmd4-hansha-sharins-projects.vercel.app/",
-    "http://localhost:5173"
+     "http://localhost:5173",
+      "https://expense-tracker-fe-henna.vercel.app",
+      "https://expense-tracker-gcl5kqmd4-hansha-sharins-projects.vercel.app"
   ],
   credentials: true,               // allow cookies
   optionsSuccessStatus: 200
+
 };
 app.use(cors(corsOptions));
 
+app.options("*", cors(corsOptions));
 
     
 
