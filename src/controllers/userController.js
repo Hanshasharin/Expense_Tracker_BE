@@ -33,8 +33,9 @@ const signup = async (req, res) => {
 
    res.cookie("token", token, {
       httpOnly: true,
-      secure: false,     // localhost → false, production → true
-      sameSite: "lax"
+        secure: true,        // required for cross-site cookies
+       sameSite: "none",
+     
     });
 
     return res.json({
