@@ -35,7 +35,7 @@ const signup = async (req, res) => {
       httpOnly: true,
         secure: true,        // required for cross-site cookies
        sameSite: "none",
-     
+       path: "/", 
     });
 
     return res.json({

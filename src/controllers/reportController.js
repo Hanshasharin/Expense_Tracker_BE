@@ -13,21 +13,35 @@ const Budget =require("../models/budget.js")
 
     });
 
-    const report = budgets
-      .filter(b => b.categoryId !== null)
-    .map((b) => {
-      const totalSpent = expenses
+    // const report = budgets
+    //   .filter(b => b.categoryId !== null)
+    // .map((b) => {
+    //   const totalSpent = expenses
 
-        .filter((e) => e.categoryId.toString() === b.categoryId._id.toString())
-        .reduce((sum, x) => sum + x.amount, 0);
+    //     .filter((e) => e.categoryId.toString() === b.categoryId._id.toString())
+    //     .reduce((sum, x) => sum + x.amount, 0);
 
-      return {
-        category: b.categoryId.name,
-        limit: b.limit,
-        spent: totalSpent,
-        remaining: b.limit - totalSpent
-      };
-    });
+    //   return {
+    //     category: b.categoryId.name,
+    //     limit: b.limit,
+    //     spent: totalSpent,
+    //     remaining: b.limit - totalSpent
+    //   };
+    // });
+const report = budgets
+  .filter(b => b.categoryId)   // skip null categories
+  .map((b) => {
+    const totalSpent = expenses
+      .filter(e => e.categoryId && b.categoryId && e.categoryId.toString() === b.categoryId._id.toString())
+      .reduce((sum, x) => sum + x.amount, 0);
+
+    return {
+      category: b.categoryId.name,
+      limit: b.limit,
+      spent: totalSpent,
+      remaining: b.limit - totalSpent
+    };
+  });
 
     res.json(report);
 
