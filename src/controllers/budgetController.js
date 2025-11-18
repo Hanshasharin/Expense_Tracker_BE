@@ -8,25 +8,23 @@ const setBudget = async (req, res) => {
 
     const catId = new mongoose.Types.ObjectId(categoryId);
 
-    // Check existing budget
-    const existing = await Budget.findOne({
-      userId: req.userId,
-      categoryId: catId,
-      month,
-    });
 
-    if (existing) {
-      return res.status(400).json({
-        message: "Budget already added for this category in this month",
-      });
-    }
+    const existing = await Budget.findOne({
+  userId: req.userId,
+  categoryId: catId,
+  month:month
+});
+if (existing) return res.status(400).json({ message: "Budget already exists for this month" });
+
+   
 
     // Save new budget
     const budget = await Budget.create({
       userId: req.userId,
       categoryId: catId,
-      month,
-      limit,
+
+  limit: req.body.limit,
+  month: req.body.month   
     });
 
     res.json({
