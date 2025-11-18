@@ -11,18 +11,16 @@ A personal budgeting system that allows users to:
 ✔ Track remaining balance visually
 ✔ Secure login with JWT + HttpOnly cookies
 
-🚀 Live Demo (Optional)
-
 Add links here when deployed:
 
 🌐 Frontend:
-https://your-frontend-url.com
+https://expense-tracker-gcl5kqmd4-hansha-sharins-projects.vercel.app/report
 
 🖥 Backend API:
-https://your-backend-url.com
+https://expense-tracker-be-iguz.onrender.com
 
 📦 Tech Stack
-Frontend
+Frontend:
 
 React (Vite)
 
@@ -32,7 +30,7 @@ TailwindCSS
 
 React Router DOM
 
-Backend
+Backend:
 
 Node.js
 
@@ -61,12 +59,12 @@ project-folder/
 │   ├── vite.config.js
 │   ├── package.json
 │   └── .env
-│
+│   
 
 
 ⚙️ Installation Guide
 1️⃣ Clone the Repository
-git clone <your-repo-url>
+git clone <https://github.com/Hanshasharin/book_library_BE >
 cd project-folder
 
 🗄 Backend Setup (Node.js)
@@ -103,10 +101,14 @@ Create .env file:
 VITE_API_URL=http://localhost:3000
 
 Start frontend:
+git clone <https://github.com/Hanshasharin/Expense_Tracker_FE >
+
 npm run dev
 
 
 Frontend runs at:
+
+
 👉 http://localhost:5173
 
 🔐 Authentication Flow
@@ -126,24 +128,22 @@ GET /api/user/me
 
 📁 Categories API
 Create Category
-POST /api/category
+POST /api/category/create
 
 Get Categories
-GET /api/category
+GET /api/category/get
 
 💰 Budget API
 Add Monthly Budget
-POST /api/budget
+POST /api/budget/set
 
 Get Budgets
-GET /api/budget
+GET /api/budget/get
 
 🧾 Expense API
 Add Expense
-POST /api/expense
+POST /api/add
 
-Get Expenses
-GET /api/expense
 
 📊 Monthly Report API
 Get Report for a Month
@@ -203,7 +203,7 @@ Month selector
 Overview of all categories in selected month
 
 🚀 Deployment Instructions
-Backend (Render / Railway)
+Backend (Render)
 
 Create new Web Service
 
@@ -218,19 +218,16 @@ npm install
 
 Start command:
 
-npm start
+node index.js
 
-Frontend (Vercel / Netlify)
+Frontend (Vercel)
 
 Select Vite project
 
-Add environment variable:
-
-VITE_API_URL=https://your-backend.com
 
 🧪 Testing the API
 
-Use Postman or Thunder Client.
+Use Postman 
 
 ✔ Test signup
 ✔ Test login
